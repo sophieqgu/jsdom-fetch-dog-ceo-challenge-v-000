@@ -32,5 +32,15 @@ function fetchDogBreeds() {
         event.target.style.color = 'purple';
       })
     }
+    addBreedSelectListener();
   })
+}
+
+function addBreedSelectListener() {
+  const dropDown = document.getElementById('breed-dropdown')
+  dropDown.addEventListener('change', updateBreedList)
+}
+
+function updateBreedList(event) {
+  
 }
