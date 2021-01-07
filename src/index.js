@@ -24,8 +24,8 @@ function fetchDogBreeds() {
   .then(response => response.json())
   .then(json => {
     const ul = document.getElementById('dog-breeds');
-    const breeds = json.message
-    renderDogBreeds(breeds)
+    const breeds = json.message;
+    renderDogBreeds(breeds);
     addBreedSelectListener(breeds);
   })
 }
