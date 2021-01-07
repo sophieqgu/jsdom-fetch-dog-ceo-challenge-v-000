@@ -24,6 +24,7 @@ function fetchDogBreeds() {
   .then(response => response.json())
   .then(json => {
     const ul = document.getElementById('dog-breeds');
+    const breeds = Object.keys(json)
     for (const breed in json.message) {
       const li = document.createElement('li');
       li.innerText = breed;
@@ -42,5 +43,5 @@ function addBreedSelectListener() {
 }
 
 function updateBreedList(event) {
-  
+
 }
