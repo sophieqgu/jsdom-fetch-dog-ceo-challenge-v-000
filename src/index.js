@@ -24,7 +24,7 @@ function fetchDogBreeds() {
   .then(response => response.json())
   .then(json => {
     const ul = document.getElementById('dog-breeds');
-    const breeds = Object.keys(json)
+    const breeds = Object.keys(json.message)
     for (const breed in json.message) {
       const li = document.createElement('li');
       li.innerText = breed;
@@ -33,13 +33,13 @@ function fetchDogBreeds() {
         event.target.style.color = 'purple';
       })
     }
-    addBreedSelectListener();
+    addBreedSelectListener(breeds);
   })
 }
 
-function addBreedSelectListener() {
+function addBreedSelectListener(breeds) {
   const dropDown = document.getElementById('breed-dropdown')
-  dropDown.addEventListener('change', updateBreedList)
+  dropDown.addEventListener('change', updateBreedList(breeds))
 }
 
 function updateBreedList(event) {
