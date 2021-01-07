@@ -24,24 +24,30 @@ function fetchDogBreeds() {
   .then(response => response.json())
   .then(json => {
     const ul = document.getElementById('dog-breeds');
-    const breeds = Object.keys(json.message)
-    for (const breed in json.message) {
-      const li = document.createElement('li');
-      li.innerText = breed;
-      ul.appendChild(li);
-      li.addEventListener('click', () => {
-        event.target.style.color = 'purple';
-      })
-    }
+    const breeds = json.message
+    renderDogBreeds(breeds)
     addBreedSelectListener(breeds);
   })
 }
 
-function addBreedSelectListener(breeds) {
+function renderDogBreeds(breeds) {
+  for (const breed in breeds) {
+    const li = document.createElement('li');
+    li.innerText = breed;
+    ul.appendChild(li);
+    li.addEventListener('click', () => {
+      event.target.style.color = 'purple';
+    })
+  }
+}
+
+function addBreedSelectListener() {
   const dropDown = document.getElementById('breed-dropdown')
-  dropDown.addEventListener('change', updateBreedList(breeds))
+  dropDown.addEventListener('change', updateBreedList)
 }
 
 function updateBreedList(event) {
-
+  const ul = document.getElementById('dog-breeds');
+  ul.innerHTML = "";
+  renderDogBreeds(breeds.filer(breed => breed.startWith(event.target.value)));
 }
