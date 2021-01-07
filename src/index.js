@@ -23,7 +23,7 @@ function fetchDogBreeds() {
   fetch('https://dog.ceo/api/breeds/list/all')
   .then(response => response.json())
   .then(json => {
-    breeds = json.message;
+    breeds = Object.keys(json.message);
     renderDogBreeds(breeds);
     addBreedSelectListener();
   })
