@@ -23,7 +23,6 @@ function fetchDogBreeds() {
   fetch('https://dog.ceo/api/breeds/list/all')
   .then(response => response.json())
   .then(json => {
-    const ul = document.getElementById('dog-breeds');
     const breeds = json.message;
     renderDogBreeds(breeds);
     addBreedSelectListener(breeds);
@@ -31,6 +30,7 @@ function fetchDogBreeds() {
 }
 
 function renderDogBreeds(breeds) {
+  const ul = document.getElementById('dog-breeds');
   for (const breed in breeds) {
     const li = document.createElement('li');
     li.innerText = breed;
