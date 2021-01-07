@@ -28,6 +28,7 @@ function fetchDogBreeds() {
       const li = document.createElement('li');
       li.innerText = breed;
       ul.appendChild(li);
+      li.
     }
   })
 }
