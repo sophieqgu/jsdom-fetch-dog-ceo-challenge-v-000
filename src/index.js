@@ -26,7 +26,7 @@ function fetchDogBreeds() {
     const ul = document.getElementbyId('dog-breeds')
     for (const breed in json.message) {
       const li = document.createElement('li');
-      li.innerHTML = breed;
+      li.innerText = breed;
       ul.appendChild(li);
     }
   })
