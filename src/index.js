@@ -28,7 +28,7 @@ function fetchDogBreeds() {
       const li = document.createElement('li');
       li.innerText = breed;
       ul.appendChild(li);
-      li.addEventListener('click', changeColor(event) {
+      li.addEventListener('click', changeColor() => {
         event.target.style.color = 'purple';
       })
     }
