@@ -49,5 +49,5 @@ function addBreedSelectListener() {
 function updateBreedList(event) {
   const ul = document.getElementById('dog-breeds');
   ul.innerHTML = "";
-  renderDogBreeds(breeds.filer(breed => breed.startWith(event.target.value)));
+  renderDogBreeds(Object.keys(breeds.filer(breed => breed.startWith(event.target.value)));
 }
