@@ -28,8 +28,8 @@ function fetchDogBreeds() {
       const li = document.createElement('li');
       li.innerText = breed;
       ul.appendChild(li);
-      li.addEventListener('click', changeColor(e) {
-        e.target.style.color = 'purple';
+      li.addEventListener('click', changeColor(event) {
+        event.target.style.color = 'purple';
       })
     }
   })
