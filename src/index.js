@@ -25,7 +25,7 @@ function fetchDogBreeds() {
   .then(json => {
     const breeds = json.message;
     renderDogBreeds(breeds);
-    addBreedSelectListener(breeds);
+    addBreedSelectListener();
   })
 }
 
